@@ -66,6 +66,9 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [3] Evaluate Reverse Polish Notation");
                 Console.WriteLine("  [4] Best Time to Buy and Sell Stock");
                 Console.WriteLine("  [5] Move Zeroes");
+                Console.WriteLine("  [6] Two Sum II - Input Array Is Sorted");
+                Console.WriteLine("  [7] Intersection of Two Arrays");
+                Console.WriteLine("  [8] Reverse Linked List");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -89,6 +92,15 @@ namespace LeetCodeConsole
                         break;
                     case "5":
                         RunMoveZeroes();
+                        break;
+                    case "6":
+                        RunTwoSumInputArrayIsSorted();
+                        break;
+                    case "7":
+                        RunIntersectionOfTwoArrays();
+                        break;
+                    case "8":
+                        RunReverseLinkedList();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -117,6 +129,8 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [1] Recyclable and Low Fat Products");
                 Console.WriteLine("  [2] Customers Who Visited but Did Not Make Transactions");
                 Console.WriteLine("  [3] Employee Bonus");
+                Console.WriteLine("  [4] Not Boring Movies");
+                Console.WriteLine("  [5] Average Selling Price");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -134,6 +148,12 @@ namespace LeetCodeConsole
                         break;
                     case "3":
                         EmployeeBonus.DisplayProblem();
+                        break;
+                    case "4":
+                        NotBoringMovies.DisplayProblem();
+                        break;
+                    case "5":
+                        AverageSellingPrice.DisplayProblem();
                         break;
                     case "0":
                         inSQLMenu = false;
@@ -327,6 +347,136 @@ namespace LeetCodeConsole
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
+        }
+
+        static void RunTwoSumInputArrayIsSorted()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Two Sum II - Input Array Is Sorted");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new TwoSumInputArrayIsSortedSolution();
+
+            // Test case 1
+            int[] numbers1 = { 2, 7, 11, 15 };
+            int target1 = 9;
+            int[] result1 = solution.TwoSum(numbers1, target1);
+            Console.WriteLine($"Test 1: numbers = [{string.Join(", ", numbers1)}], target = {target1}");
+            Console.WriteLine($"Output: [{result1[0]}, {result1[1]}]");
+            Console.WriteLine($"Expected: [1, 2]");
+            Console.WriteLine($"Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2 (1-indexed)\n");
+
+            // Test case 2
+            int[] numbers2 = { 2, 3, 4 };
+            int target2 = 6;
+            int[] result2 = solution.TwoSum(numbers2, target2);
+            Console.WriteLine($"Test 2: numbers = [{string.Join(", ", numbers2)}], target = {target2}");
+            Console.WriteLine($"Output: [{result2[0]}, {result2[1]}]");
+            Console.WriteLine($"Expected: [1, 3]");
+            Console.WriteLine($"Explanation: The sum of 2 and 4 is 6. Therefore, index1 = 1, index2 = 3 (1-indexed)\n");
+
+            // Test case 3
+            int[] numbers3 = { -1, 0 };
+            int target3 = -1;
+            int[] result3 = solution.TwoSum(numbers3, target3);
+            Console.WriteLine($"Test 3: numbers = [{string.Join(", ", numbers3)}], target = {target3}");
+            Console.WriteLine($"Output: [{result3[0]}, {result3[1]}]");
+            Console.WriteLine($"Expected: [1, 2]");
+            Console.WriteLine($"Explanation: The sum of -1 and 0 is -1. Therefore, index1 = 1, index2 = 2 (1-indexed)\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunIntersectionOfTwoArrays()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Intersection of Two Arrays");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new IntersectionOfTwoArraysSolution();
+
+            // Test case 1
+            int[] nums1_1 = { 1, 2, 2, 1 };
+            int[] nums2_1 = { 2, 2 };
+            int[] result1 = solution.Intersection(nums1_1, nums2_1);
+            Console.WriteLine($"Test 1: nums1 = [{string.Join(", ", nums1_1)}], nums2 = [{string.Join(", ", nums2_1)}]");
+            Console.WriteLine($"Output: [{string.Join(", ", result1)}]");
+            Console.WriteLine($"Expected: [2]\n");
+
+            // Test case 2
+            int[] nums1_2 = { 4, 9, 5 };
+            int[] nums2_2 = { 9, 4, 9, 8, 4 };
+            int[] result2 = solution.Intersection(nums1_2, nums2_2);
+            Console.WriteLine($"Test 2: nums1 = [{string.Join(", ", nums1_2)}], nums2 = [{string.Join(", ", nums2_2)}]");
+            Console.WriteLine($"Output: [{string.Join(", ", result2)}]");
+            Console.WriteLine($"Expected: [9, 4] or [4, 9]\n");
+
+            // Test case 3
+            int[] nums1_3 = { 1, 2, 3 };
+            int[] nums2_3 = { 4, 5, 6 };
+            int[] result3 = solution.Intersection(nums1_3, nums2_3);
+            Console.WriteLine($"Test 3: nums1 = [{string.Join(", ", nums1_3)}], nums2 = [{string.Join(", ", nums2_3)}]");
+            Console.WriteLine($"Output: [{string.Join(", ", result3)}]");
+            Console.WriteLine($"Expected: []\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunReverseLinkedList()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Reverse Linked List");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new ReverseLinkedListSolution();
+
+            // Test case 1: [1,2,3,4,5]
+            var head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+            Console.WriteLine("Test 1: head = [1, 2, 3, 4, 5]");
+            var result1 = solution.ReverseList(head1);
+            Console.Write("Output: [");
+            PrintList(result1);
+            Console.WriteLine("]");
+            Console.WriteLine("Expected: [5, 4, 3, 2, 1]\n");
+
+            // Test case 2: [1,2]
+            var head2 = new ListNode(1, new ListNode(2));
+            Console.WriteLine("Test 2: head = [1, 2]");
+            var result2 = solution.ReverseList(head2);
+            Console.Write("Output: [");
+            PrintList(result2);
+            Console.WriteLine("]");
+            Console.WriteLine("Expected: [2, 1]\n");
+
+            // Test case 3: []
+            ListNode head3 = null;
+            Console.WriteLine("Test 3: head = []");
+            var result3 = solution.ReverseList(head3);
+            Console.Write("Output: [");
+            PrintList(result3);
+            Console.WriteLine("]");
+            Console.WriteLine("Expected: []\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void PrintList(ListNode head)
+        {
+            var current = head;
+            bool first = true;
+            while (current != null)
+            {
+                if (!first) Console.Write(", ");
+                Console.Write(current.val);
+                first = false;
+                current = current.next;
+            }
         }
     }
 }
