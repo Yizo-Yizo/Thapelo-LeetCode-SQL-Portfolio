@@ -69,6 +69,8 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [6] Two Sum II - Input Array Is Sorted");
                 Console.WriteLine("  [7] Intersection of Two Arrays");
                 Console.WriteLine("  [8] Reverse Linked List");
+                Console.WriteLine("  [9] Valid Parentheses");
+                Console.WriteLine("  [10] Implement Queue Using Stacks");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -101,6 +103,12 @@ namespace LeetCodeConsole
                         break;
                     case "8":
                         RunReverseLinkedList();
+                        break;
+                    case "9":
+                        RunValidParentheses();
+                        break;
+                    case "10":
+                        RunImplementQueueUsingStacks();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -477,6 +485,99 @@ namespace LeetCodeConsole
                 first = false;
                 current = current.next;
             }
+        }
+
+        static void RunValidParentheses()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Valid Parentheses");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new ValidParentheseSolution();
+
+            // Test case 1
+            string s1 = "()";
+            bool result1 = solution.IsValid(s1);
+            Console.WriteLine($"Test 1: s = \"{s1}\"");
+            Console.WriteLine($"Output: {result1}");
+            Console.WriteLine($"Expected: True\n");
+
+            // Test case 2
+            string s2 = "()[]{}";
+            bool result2 = solution.IsValid(s2);
+            Console.WriteLine($"Test 2: s = \"{s2}\"");
+            Console.WriteLine($"Output: {result2}");
+            Console.WriteLine($"Expected: True\n");
+
+            // Test case 3
+            string s3 = "(]";
+            bool result3 = solution.IsValid(s3);
+            Console.WriteLine($"Test 3: s = \"{s3}\"");
+            Console.WriteLine($"Output: {result3}");
+            Console.WriteLine($"Expected: False\n");
+
+            // Test case 4
+            string s4 = "([])";
+            bool result4 = solution.IsValid(s4);
+            Console.WriteLine($"Test 4: s = \"{s4}\"");
+            Console.WriteLine($"Output: {result4}");
+            Console.WriteLine($"Expected: True\n");
+
+            // Test case 5
+            string s5 = "([)]";
+            bool result5 = solution.IsValid(s5);
+            Console.WriteLine($"Test 5: s = \"{s5}\"");
+            Console.WriteLine($"Output: {result5}");
+            Console.WriteLine($"Expected: False\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunImplementQueueUsingStacks()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Implement Queue Using Stacks");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var queue = new ImplementQueueUsingStacksSolution();
+
+            Console.WriteLine("Operations:");
+            Console.WriteLine("  queue.Push(1)");
+            queue.Push(1);
+            Console.WriteLine("  queue.Push(2)");
+            queue.Push(2);
+
+            int peekResult = queue.Peek();
+            Console.WriteLine($"  queue.Peek() -> {peekResult}");
+            Console.WriteLine($"  Expected: 1\n");
+
+            int popResult = queue.Pop();
+            Console.WriteLine($"  queue.Pop() -> {popResult}");
+            Console.WriteLine($"  Expected: 1\n");
+
+            bool emptyResult = queue.Empty();
+            Console.WriteLine($"  queue.Empty() -> {emptyResult}");
+            Console.WriteLine($"  Expected: False\n");
+
+            // Additional test
+            Console.WriteLine("Additional test:");
+            var queue2 = new ImplementQueueUsingStacksSolution();
+            queue2.Push(10);
+            queue2.Push(20);
+            queue2.Push(30);
+            Console.WriteLine("  Push: 10, 20, 30");
+            Console.WriteLine($"  Pop: {queue2.Pop()} (Expected: 10)");
+            Console.WriteLine($"  Pop: {queue2.Pop()} (Expected: 20)");
+            Console.WriteLine($"  Peek: {queue2.Peek()} (Expected: 30)");
+            Console.WriteLine($"  Empty: {queue2.Empty()} (Expected: False)");
+            Console.WriteLine($"  Pop: {queue2.Pop()} (Expected: 30)");
+            Console.WriteLine($"  Empty: {queue2.Empty()} (Expected: True)");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
         }
     }
 }
