@@ -74,6 +74,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [11] Min Stack");
                 Console.WriteLine("  [12] Maximum Depth of Binary Tree");
                 Console.WriteLine("  [13] Fibonacci Number");
+                Console.WriteLine("  [14] Merge Sorted Array");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -121,6 +122,9 @@ namespace LeetCodeConsole
                         break;
                     case "13":
                         RunFibonacciNumber();
+                        break;
+                    case "14":
+                        RunMergeSortedArray();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -716,6 +720,43 @@ namespace LeetCodeConsole
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
             Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunMergeSortedArray()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Merge Sorted Array");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new MergeSortedArraySolution();
+
+            // Test case 1
+            int[] nums1_1 = { 1, 2, 3, 0, 0, 0 };
+            int[] nums2_1 = { 2, 5, 6 };
+            solution.Merge(nums1_1, 3, nums2_1, 3);
+            Console.WriteLine("Test 1: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3");
+            Console.WriteLine($"Output: [{string.Join(", ", nums1_1)}]");
+            Console.WriteLine("Expected: [1, 2, 2, 3, 5, 6]\n");
+
+            // Test case 2
+            int[] nums1_2 = { 1 };
+            int[] nums2_2 = { };
+            solution.Merge(nums1_2, 1, nums2_2, 0);
+            Console.WriteLine("Test 2: nums1 = [1], m = 1, nums2 = [], n = 0");
+            Console.WriteLine($"Output: [{string.Join(", ", nums1_2)}]");
+            Console.WriteLine("Expected: [1]\n");
+
+            // Test case 3
+            int[] nums1_3 = { 0 };
+            int[] nums2_3 = { 1 };
+            solution.Merge(nums1_3, 0, nums2_3, 1);
+            Console.WriteLine("Test 3: nums1 = [0], m = 0, nums2 = [1], n = 1");
+            Console.WriteLine($"Output: [{string.Join(", ", nums1_3)}]");
+            Console.WriteLine("Expected: [1]\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
