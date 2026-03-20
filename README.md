@@ -112,6 +112,6 @@ By the end of this journey, I aim to:
 ## 🤝 Connect With Me
 
 * 🧑‍💻 **GitHub:** [https://github.com/Yizo-Yizo](https://github.com/Yizo-Yizo)
-* 💼 **LinkedIn:** *(coming soon)*
+* 💼 **LinkedIn:** [https://www.linkedin.com/in/thapelo-selebedi-a328bb69](https://www.linkedin.com/in/thapelo-selebedi-a328bb69)
 
 If you’re on a similar learning path or interested in collaboration, feel free to connect.
